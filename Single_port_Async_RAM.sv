@@ -6,8 +6,10 @@ module Single_port_Async_RAM #( parameter MEM_DEPTH=256,parameter ADDR_SIZE=8)
  output logic tx_valid
 );
 logic [ADDR_SIZE-1:0] RAM [0:MEM_DEPTH-1]; 
-
+logic [1:0] Operation_Type;
+assign Operation_Type = din[ADDR_SIZE+1:ADDR_SIZE];
 logic [ADDR_SIZE-1:0]Write_Address,Read_Address=0;
+logic [$clog2(ADDR_SIZE + 2):0] counter=0;
 always @(posedge(clk),negedge(rst_n)) 
 begin
       if(rst_n ==0)
@@ -19,7 +21,7 @@ begin
       end
       else if(rx_valid) 
       begin
-        case(din[ADDR_SIZE+1:ADDR_SIZE])
+        case(Operation_Type)
           2'b00:
           begin
             Write_Address<=din[ADDR_SIZE-1:0]; // Write Address
@@ -36,9 +38,13 @@ begin
           begin
           Read_Address<=din[ADDR_SIZE-1:0]; // Read Address
           dout <=0;
-          tx_valid <=1;
+          tx_valid <=0;
           end
-          2'b11: dout<=RAM[Read_Address]  ; // Read Data
+          2'b11: begin
+            
+          dout<=RAM[Read_Address]  ; // Read Data
+          tx_valid<=1;
+          end
           default:
           begin
             dout <=0;
@@ -48,7 +54,14 @@ begin
       end
       else
       dout <=dout;
-
+    if(tx_valid &&counter<8)begin
+      counter<=counter+1;
+  
+    end
+    else begin
+    tx_valid=0;
+    counter=0;  
+    end
 end
 
 endmodule

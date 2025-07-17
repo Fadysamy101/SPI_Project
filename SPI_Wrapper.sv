@@ -28,6 +28,7 @@ Single_port_Async_RAM #(
 SPI_Slave_Interface #(.ADDR_SIZE(ADDR_SIZE)
 ) u_SPI_Slave_Interface(
     .MOSI     (MOSI     ),
+    .SS_N     (SS_N     ),
     .tx_valid (tx_valid ),
     .tx_data  (dout ),
     .clk      (clk      ),
