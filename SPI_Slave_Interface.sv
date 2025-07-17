@@ -50,9 +50,9 @@ begin
     end
     else 
     begin
-        // Edge detection for tx_valid
+        // Register for previous tx_valid
         tx_valid_d <= tx_valid;
-        
+
         if(!SS_N && current_state !== IDLE)
         begin
             counter <= counter + 1;
@@ -68,7 +68,7 @@ begin
         if(~tx_valid_d && tx_valid)
             shift_reg_MISO <= tx_data;
         
-        // Handle Has_Read_Address in sequential logic
+  
         if(current_state == READ_ADD && next_state==IDLE)begin
             Has_Read_Address <= 1;
         end
@@ -126,8 +126,8 @@ begin
             else
             begin
                 next_state = WRITE;
-                // rx_valid = 0; // Not needed, already set by default
-                // Has_Read_Address = 0; // Not needed, already set by default
+
+             
             end
         end
         
@@ -142,7 +142,7 @@ begin
             else
             begin
                 next_state = READ_ADD;
-                // rx_valid = 0; // Not needed, already set by default
+            
             end
         end
         
@@ -156,7 +156,7 @@ begin
             else
             begin
                 next_state = READ_DATA1;
-                // rx_valid = 0; // Not needed, already set by default
+               
             end
         end
         
@@ -176,7 +176,7 @@ begin
         default:
         begin
             next_state = IDLE;
-            // All other signals already have default values
+        
         end
     endcase
 end

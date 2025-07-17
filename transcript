@@ -81,3 +81,5 @@ run -all
 # ** Note: $stop    : Testbench.sv(108)
 #    Time: 4850 ns  Iteration: 1  Instance: /Testbench
 # Break in Module Testbench at Testbench.sv line 108
+run
+# Time=4850, SS_N=0, MOSI=0, MISO=0, State=READ_DATA1, Counter=9, rx_valid=0, tx_valid=0
