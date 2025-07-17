@@ -1,0 +1,86 @@
+m255
+K4
+z2
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/johns/Desktop/SPI_Project
+vSingle_port_Async_RAM
+Z1 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z2 !s110 1752749480
+!i10b 1
+!s100 6?7:5QLcC56_EPHP;WBCE2
+I7Obi:[>BYKM60DWXbg1462
+S1
+R0
+w1752216472
+8Single_port_Async_RAM.sv
+FSingle_port_Async_RAM.sv
+!i122 9
+L0 1 54
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z5 !s108 1752749480.000000
+!s107 Top_module.sv|SPI_Slave_Interface.sv|Single_port_Async_RAM.sv|
+Z6 !s90 +=vopt|Single_port_Async_RAM.sv|SPI_Slave_Interface.sv|Top_module.sv|
+!i113 0
+Z7 o+=vopt -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 tCvgOpt 0
+n@single_port_@async_@r@a@m
+vSPI_Slave_Interface
+R1
+R2
+!i10b 1
+!s100 <j4cjjIXY[MI3N3S]DMi13
+IBF4JRWLE3]g5c21X6EbFR3
+S1
+R0
+w1752749450
+8SPI_Slave_Interface.sv
+FSPI_Slave_Interface.sv
+!i122 9
+L0 1 154
+R3
+R4
+r1
+!s85 0
+31
+R5
+Z9 !s107 Top_module.sv|SPI_Slave_Interface.sv|Single_port_Async_RAM.sv|
+R6
+!i113 0
+R7
+R8
+n@s@p@i_@slave_@interface
+vSPI_Wrapper
+R1
+R2
+!i10b 1
+!s100 ?GIC=5AegeZ1E>RUIA7WB1
+I1=4[zU>d`>W4^_D?PEj?F3
+S1
+R0
+w1752748004
+8Top_module.sv
+FTop_module.sv
+!i122 9
+L0 1 40
+R3
+R4
+r1
+!s85 0
+31
+R5
+R9
+R6
+!i113 0
+R7
+R8
+n@s@p@i_@wrapper
